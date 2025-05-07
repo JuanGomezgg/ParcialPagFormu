@@ -30,29 +30,21 @@ function jcgg_ChangeColor() {
   });
 }
 
-document.getElementById("jcgg_formulario_contacto").addEventListener("submit", function (e) {
-      e.preventDefault(); // evitar recarga
-      const form = e.target;
-      const datos = new FormData(form);
-      const mensajeContenedor = document.getElementById("jcgg_mensaje_formulario");
+const formulario = document.getElementById("jcgg_formulario_contacto");
+    const mensajeContenedor = document.getElementById("jcgg_mensaje_formulario");
 
-      fetch("ruta-del-servidor.php", {
-        method: "POST",
-        body: datos,
-      })
-        .then((response) => response.text())
-        .then((texto) => {
-          if (texto.includes("correctamente")) {
-            mensajeContenedor.textContent = "La información ha sido enviada correctamente.";
-            mensajeContenedor.className = "jcgg_mensaje exito";
-          } else {
-            mensajeContenedor.textContent = "Parece que hubo un problema, por favor intenta llenar los datos nuevamente.";
-            mensajeContenedor.className = "jcgg_mensaje error";
-          }
+    formulario.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      emailjs.sendForm("service_vc0nvro", "template-uts3xuh", formulario)
+        .then(function () {
+          mensajeContenedor.textContent = "La información ha sido enviada correctamente.";
+          mensajeContenedor.className = "jcgg_mensaje exito";
           mensajeContenedor.style.display = "block";
-        })
-        .catch(() => {
-          mensajeContenedor.textContent = "Error de conexión. Intenta más tarde.";
+          formulario.reset();
+        }, function (error) {
+          console.error(error);
+          mensajeContenedor.textContent = "Parece que hubo un problema, por favor intenta llenar los datos nuevamente.";
           mensajeContenedor.className = "jcgg_mensaje error";
           mensajeContenedor.style.display = "block";
         });

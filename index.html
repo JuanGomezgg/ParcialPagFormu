@@ -1,0 +1,72 @@
+<body>
+  <link rel="stylesheet" href="stylesco.css">
+    <header class="jcgg_header" id="jcggHeader"> 
+  <img class="jcgg_imagen" src="https://cdn-icons-png.flaticon.com/512/11096/11096817.png" alt="">
+  <p class="jcgg_logo">La Cueva de los Coders</p>
+
+  <button class="jcgg_menu_icon" onclick="toggleMenu()">⚙️</button>
+
+  <button class="jcgg_color_btn" onclick="jcgg_ChangeColor()">🎨</button>
+
+  <nav class="jcgg_nav">
+    <ul class="jcgg_nav_list">
+      <li><a href="#">Inicio //</a></li>
+      <li><a href="#">Servicios //</a></li>
+      <li><a href="#">Contacto //</a></li>
+      <li><a href="#">Changelog //</a></li>
+      <li><a href="#">Task Tracker //</a></li>
+      <li><a href="#">Acerca de</a></li>
+    </ul>
+  </nav>
+</header>
+  
+  <div class="jcgg_main">
+        <section class="jcgg_hero">
+            <h1>Desarrollo Web Freelance</h1>
+        </section>
+    
+    <section class="jcgg_formulario">
+      <h4>Ingresa tus datos y tu pedido aqui:</h4>
+    <form class="jcgg_formulario" id="jcgg_formulario_contacto" method="POST" action="ruta-del-servidor.php">
+  <label class="jcgg_label">
+    Nombre:
+    <input type="text" name="nombre" class="jcgg_input" required>
+  </label>
+
+  <label class="jcgg_label">
+    Apellido:
+    <input type="text" name="apellido" class="jcgg_input" required>
+  </label>
+
+  <label class="jcgg_label">
+    Género:
+    <select name="genero" class="jcgg_select" required>
+      <option value="">Selecciona</option>
+      <option value="Masculino">Masculino</option>
+      <option value="Femenino">Femenino</option>
+    </select>
+  </label>
+
+  <label class="jcgg_label">
+    Correo Electrónico:
+    <input type="email" name="email" class="jcgg_input" required>
+  </label>
+
+  <label class="jcgg_label">
+    Información:
+    <textarea name="mensaje" class="jcgg_textarea" oninput="this.style.height = ''; this.style.height = this.scrollHeight + 'px'" required></textarea>
+  </label>
+
+  <button type="submit" class="jcgg_boton_enviar">Enviar</button>
+    <div id="jcgg_mensaje_formulario" class="jcgg_mensaje"></div>
+  </form>
+  </section>
+
+    </div>
+
+  <footer class="jcgg_footer">
+        <div class="jcgg_logo">LCC</div>
+        <p class ="jcgg_pointer">Información de contacto</p>
+    </footer>
+  <script src="scriptco.js"></script>
+</body>

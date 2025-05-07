@@ -27,37 +27,38 @@
     
     <section class="jcgg_formulario">
       <h4>Ingresa tus datos y tu pedido aqui:</h4>
-    <form class="jcgg_formulario" id="jcgg_formulario_contacto" method="POST" action="ruta-del-servidor.php">
-  <label class="jcgg_label">
-    Nombre:
-    <input type="text" name="nombre" class="jcgg_input" required>
-  </label>
+    <form class="jcgg_formulario" id="jcgg_formulario_contacto">
+    <label class="jcgg_label">
+      Nombre:
+      <input type="text" name="nombre" class="jcgg_input" required>
+    </label>
 
-  <label class="jcgg_label">
-    Apellido:
-    <input type="text" name="apellido" class="jcgg_input" required>
-  </label>
+    <label class="jcgg_label">
+      Apellido:
+      <input type="text" name="apellido" class="jcgg_input" required>
+    </label>
 
-  <label class="jcgg_label">
-    Género:
-    <select name="genero" class="jcgg_select" required>
-      <option value="">Selecciona</option>
-      <option value="Masculino">Masculino</option>
-      <option value="Femenino">Femenino</option>
-    </select>
-  </label>
+    <label class="jcgg_label">
+      Género:
+      <select name="genero" class="jcgg_select" required>
+        <option value="">Selecciona</option>
+        <option value="Masculino">Masculino</option>
+        <option value="Femenino">Femenino</option>
+        <option value="39 Tipos de Gae">NipayaNipaca</option>
+      </select>
+    </label>
 
-  <label class="jcgg_label">
-    Correo Electrónico:
-    <input type="email" name="email" class="jcgg_input" required>
-  </label>
+    <label class="jcgg_label">
+      Correo Electrónico:
+      <input type="email" name="email" class="jcgg_input" required>
+    </label>
 
-  <label class="jcgg_label">
-    Información:
-    <textarea name="mensaje" class="jcgg_textarea" oninput="this.style.height = ''; this.style.height = this.scrollHeight + 'px'" required></textarea>
-  </label>
+    <label class="jcgg_label">
+      Información:
+      <textarea name="mensaje" class="jcgg_textarea" oninput="this.style.height=''; this.style.height=this.scrollHeight + 'px'" required></textarea>
+    </label>
 
-  <button type="submit" class="jcgg_boton_enviar">Enviar</button>
+    <button type="submit" class="jcgg_boton_enviar">Enviar</button>
     <div id="jcgg_mensaje_formulario" class="jcgg_mensaje"></div>
   </form>
   </section>
@@ -69,4 +70,10 @@
         <p class ="jcgg_pointer">Información de contacto</p>
     </footer>
   <script src="scriptco.js"></script>
+<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <script>
+    (function(){
+      emailjs.init("nGGwmM2VQV_U0ZfCL");
+    })();
+  </script>
 </body>

@@ -29,23 +29,3 @@ function jcgg_ChangeColor() {
     btn.style.color = textColor;
   });
 }
-
-const formulario = document.getElementById("jcgg_formulario_contacto");
-    const mensajeContenedor = document.getElementById("jcgg_mensaje_formulario");
-
-    formulario.addEventListener("submit", function (e) {
-      e.preventDefault();
-
-      emailjs.sendForm("service_vc0nvro", "template-uts3xuh", formulario)
-        .then(function () {
-          mensajeContenedor.textContent = "La información ha sido enviada correctamente.";
-          mensajeContenedor.className = "jcgg_mensaje exito";
-          mensajeContenedor.style.display = "block";
-          formulario.reset();
-        }, function (error) {
-          console.error(error);
-          mensajeContenedor.textContent = "Parece que hubo un problema, por favor intenta llenar los datos nuevamente.";
-          mensajeContenedor.className = "jcgg_mensaje error";
-          mensajeContenedor.style.display = "block";
-        });
-    });

@@ -29,3 +29,18 @@ function jcgg_ChangeColor() {
     btn.style.color = textColor;
   });
 }
+
+document.getElementById("jcgg_formulario").addEventListener("submit", function(e) {
+      e.preventDefault();
+
+      const nombre = document.getElementById("jcgg_nombre").value.trim();
+      const apellido = document.getElementById("jcgg_apellido").value.trim();
+      const genero = document.getElementById("jcgg_genero").value;
+      const email = document.getElementById("jcgg_email").value.trim();
+      const mensaje = document.getElementById("jcgg_mensaje").value.trim();
+
+      if (!nombre || !apellido || !genero || !email || !mensaje) {
+        alert("Por favor verifica que hayas llenado todos los campos correctamente.");
+        return;
+      }
+    });

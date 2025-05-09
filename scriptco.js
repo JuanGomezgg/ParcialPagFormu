@@ -38,9 +38,15 @@ document.getElementById("jcgg_formulario").addEventListener("submit", function(e
       const genero = document.getElementById("jcgg_genero").value;
       const email = document.getElementById("jcgg_email").value.trim();
       const mensaje = document.getElementById("jcgg_mensaje").value.trim();
+      const aviso = document.getElementById("jcgg_mensaje_formulario");
 
       if (!nombre || !apellido || !genero || !email || !mensaje) {
-        alert("Por favor verifica que hayas llenado todos los campos correctamente.");
-        return;
+        aviso.textContent = "Por favor verifica nuevamente que hayas llenado todos los campos.";
+        aviso.className = "jcgg_mensaje error";
+        aviso.style.display = "block";
+      } else {
+        aviso.textContent = "Formulario enviado con exito.";
+        aviso.className = "jcgg_mensaje exito";
+        aviso.style.display = "block";
       }
     });

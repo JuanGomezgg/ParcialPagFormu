@@ -28,34 +28,29 @@
     <section class="jcgg_formulario">
       <h4>Ingresa tus datos y tu pedido aqui:</h4>
     <form class="jcgg_formulario" id="jcgg_formulario_contacto">
-    <label class="jcgg_label">
-      Nombre:
-      <input type="text" name="nombre" class="jcgg_input" required>
+    <label class="jcgg_label">Nombre:
+      <input type="text" id="jcgg_nombre" class="jcgg_input">
     </label>
 
-    <label class="jcgg_label">
-      Apellido:
-      <input type="text" name="apellido" class="jcgg_input" required>
+    <label class="jcgg_label">Apellido:
+      <input type="text" id="jcgg_apellido" class="jcgg_input">
     </label>
 
-    <label class="jcgg_label">
-      Género:
-      <select name="genero" class="jcgg_select" required>
+    <label class="jcgg_label">Género:
+      <select id="jcgg_genero" class="jcgg_select">
         <option value="">Selecciona</option>
         <option value="Masculino">Masculino</option>
         <option value="Femenino">Femenino</option>
-        <option value="NipayaNipaca">Boing747 Hidraulico</option>
+        <option value="NiPaYaNiPaCa">Boing747 Hidraulico</option>
       </select>
     </label>
 
-    <label class="jcgg_label">
-      Correo Electrónico:
-      <input type="email" name="email" class="jcgg_input" required>
+    <label class="jcgg_label">Correo Electrónico:
+      <input type="email" id="jcgg_email" class="jcgg_input">
     </label>
 
-    <label class="jcgg_label">
-      Información:
-      <textarea name="mensaje" class="jcgg_textarea" oninput="this.style.height=''; this.style.height=this.scrollHeight + 'px'" required></textarea>
+    <label class="jcgg_label">Información:
+      <textarea id="jcgg_mensaje" class="jcgg_textarea"></textarea>
     </label>
 
     <button type="submit" class="jcgg_boton_enviar">Send</button>
